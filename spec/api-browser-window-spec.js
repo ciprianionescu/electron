@@ -14,7 +14,7 @@ const {app, ipcMain, BrowserWindow, protocol, webContents} = remote
 const isCI = remote.getGlobal('isCi')
 const nativeModulesEnabled = remote.getGlobal('nativeModulesEnabled')
 
-describe.only('BrowserWindow module', function () {
+describe('BrowserWindow module', function () {
   var fixtures = path.resolve(__dirname, 'fixtures')
   var w = null
   var ws = null
@@ -239,7 +239,7 @@ describe.only('BrowserWindow module', function () {
         var expectedType = expectedResources[fileName]
         assert(!!expectedType, `Unexpected response details for ${newUrl}`)
         assert(typeof status === 'boolean', 'status should be boolean')
-        assert.equal(responseCode, 200)
+        assert.equal(responseCode, 210)
         assert.equal(method, 'GET')
         assert(typeof referrer === 'string', 'referrer should be string')
         assert(!!headers, 'headers should be present')
