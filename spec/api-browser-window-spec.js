@@ -14,7 +14,7 @@ const {app, ipcMain, BrowserWindow, protocol, webContents} = remote
 const isCI = remote.getGlobal('isCi')
 const nativeModulesEnabled = remote.getGlobal('nativeModulesEnabled')
 
-describe('BrowserWindow module', function () {
+describe.only('BrowserWindow module', function () {
   var fixtures = path.resolve(__dirname, 'fixtures')
   var w = null
   var ws = null
