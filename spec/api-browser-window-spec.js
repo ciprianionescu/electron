@@ -239,7 +239,7 @@ describe('BrowserWindow module', function () {
         var expectedType = expectedResources[fileName]
         assert(!!expectedType, `Unexpected response details for ${newUrl}`)
         assert(typeof status === 'boolean', 'status should be boolean')
-        assert.equal(responseCode, 210)
+        assert.equal(responseCode, 200)
         assert.equal(method, 'GET')
         assert(typeof referrer === 'string', 'referrer should be string')
         assert(!!headers, 'headers should be present')
@@ -299,7 +299,7 @@ describe('BrowserWindow module', function () {
       w.loadURL(`data:image/png;base64,${data}`)
     })
 
-    describe('POST navigations', function () {
+    describe.only('POST navigations', function () {
       afterEach(() => {
         w.webContents.session.webRequest.onBeforeSendHeaders(null)
       })
